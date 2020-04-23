@@ -1,0 +1,15 @@
+import requests
+import base64
+
+
+def get_prediction(image_data):
+    url = 'https://14kibf8vq6.execute-api.us-east-1.amazonaws.com/Predict/e2b0eeac-b587-4568-9580-36e5f7c85578'
+    r = requests.post(url, data=image_data)
+    response = getattr(r, '_content').decode("utf-8")
+    print(response)
+    return response
+
+
+with open("Macintosh HD\Users\ananyaaggarwal\Downloads\Going to Rain Images", "rb") as image:
+    payload = base64.b64encode(image.read())
+    response = get_prediction(payload)
