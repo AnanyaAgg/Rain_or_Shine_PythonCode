@@ -10,6 +10,6 @@ def get_prediction(image_data):
     return response
 
 
-with open("Macintosh HD\Users\ananyaaggarwal\Downloads\Going to Rain Images", "rb") as image:
+with open("/Users/ananyaaggarwal/Downloads/Going to Rain Images", "rb") as image:
     payload = base64.b64encode(image.read())
     response = get_prediction(payload)
